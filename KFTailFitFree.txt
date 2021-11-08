@@ -1,0 +1,142 @@
+[0mroot [1] .x KFTailFit.C
+[0m
+[1mRooFit v3.60 -- Developed by Wouter Verkerke and David Kirkby[0m 
+                Copyright (C) 2000-2013 NIKHEF, University of California & Stanford University
+                All rights reserved, please read http://roofit.sourceforge.net/license.txt
+
+[#0] ERROR:InputArguments -- RooUniformBinning::setRange: ERROR low bound > high bound
+[#0] WARNING:InputArguments -- RooRealVar::setRange(alpha): Proposed new fit max. smaller than min., setting max. to min.
+Using the database db and model sigAdd
+TFile**		temp.root	
+ TFile*		temp.root	
+  KEY: RooDataHist	db;1	db
+  KEY: TProcessID	ProcessID0;1	57fc4e72-40da-11ec-8341-57a8a983beef
+  KEY: RooAddPdf	sigAdd;1	Muon Free Kuraev-Fadin Tail Fit #sqrt{s}
+  KEY: RooRealVar	bsx;1	sqrt(s) [GeV]
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(fbeta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(beta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:Minization -- RooMinimizer::optimizeConst: activating const optimization
+[#1] INFO:Minization -- RooMinimizerFcn::synchronize: set of constant parameters changed, rerunning const optimizer
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(fbeta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(beta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (fbeta)
+ **********
+ **    1 **SET PRINT           1
+ **********
+ **********
+ **    2 **SET NOGRAD
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 alpha        7.29927e-04  7.29927e-05     no limits
+ **********
+ **    3 **FIX           1
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     2 be           2.50000e+02  2.00000e+00    2.40000e+02  2.60000e+02
+     3 me           1.05700e-01  2.49550e-02    4.50000e-04  2.50000e-01
+ **********
+ **    4 **SET ERR           1
+ **********
+ **********
+ **    5 **SET PRINT           1
+ **********
+ **********
+ **    6 **SET STR           1
+ **********
+ NOW USING STRATEGY  1: TRY TO BALANCE SPEED AGAINST RELIABILITY
+ **********
+ **    7 **MIGRAD        1500           1
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-03
+[#0] WARNING:Integration -- RooIntegrator1D::integral: integral of fbeta over range (150,249.9) did not converge after 20 steps
+   [1] h = 1 , s = 0.267226
+   [2] h = 0.25 , s = 0.805582
+   [3] h = 0.0625 , s = 1.35865
+   [4] h = 0.015625 , s = 1.93206
+   [5] h = 0.00390625 , s = 2.52881
+   [6] h = 0.000976562 , s = 3.16216
+   [7] h = 0.000244141 , s = 3.8727
+   [8] h = 6.10352e-05 , s = 4.79658
+   [9] h = 1.52588e-05 , s = 6.84709
+   [10] h = 3.8147e-06 , s = 5.93076
+   [11] h = 9.53674e-07 , s = 7.93575
+   [12] h = 2.38419e-07 , s = 7.04031
+   [13] h = 5.96046e-08 , s = 8.90188
+   [14] h = 1.49012e-08 , s = 8.07248
+   [15] h = 3.72529e-09 , s = 9.52361
+   [16] h = 9.31323e-10 , s = 8.88157
+   [17] h = 2.32831e-10 , s = 9.62338
+   [18] h = 5.82077e-11 , s = 10.6855
+   [19] h = 1.45519e-11 , s = 15.1212
+   [20] h = 3.63798e-12 , s = 13.0691
+RooMinimizerFcn: Minimized function has error status.
+Returning maximum FCN so far (146325) to force MIGRAD to back out of this region. Error log follows.
+Parameter values: 	alpha=0.000729927	be=249.641	me=0.1057
+RooChi2Var::chi2_sigAdd_db[ paramSet=(% Signal,alpha,be,me) ]
+     function value is NAN @ paramSet=(% Signal = 1,alpha = 0.000729927,be = 249.641,me = 0.1057)
+RooGenericPdf::fbeta[ actualVars=(beta,bsx,be) formula="x[0]/16 * ((8 + 3*x[0])*(1-x[1]/x[2])^(x[0]/2 - 1) - 4*(1+x[1]/x[2]))" ]
+     p.d.f value is Not-a-Number @ actualVars=(beta = 0.00675394/0.653124,bsx = 249.65,be = 249.641)
+RooAddPdf::sigAdd[ % Signal * fbeta ]
+     p.d.f value is Not-a-Number @ !refCoefNorm=(), !pdfs=(fbeta = -nan/13.0691), !coefficients=(% Signal = 1)
+
+ FCN=16440.1 FROM MIGRAD    STATUS=INITIATE       36 CALLS          37 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha        7.29927e-04     fixed    
+   2  be           2.50120e+02   2.00000e+00   0.00000e+00  -3.72083e+05
+   3  me           1.77634e-03   2.49550e-02  -1.55961e+00   9.12036e+03
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=15274.8 FROM MIGRAD    STATUS=CONVERGED      74 CALLS          75 TOTAL
+                     EDM=9.04668e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  alpha        7.29927e-04     fixed    
+   2  be           2.50184e+02   2.13888e-03   1.28383e-05   2.56219e-01
+   3  me           1.98583e-03   3.66704e-05   1.12770e-04   6.23882e-02
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  2    ERR DEF=1
+  4.575e-06  8.228e-09 
+  8.228e-09  1.345e-09 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      2      3
+        2  0.10491   1.000  0.105
+        3  0.10491   0.105  1.000
+[#1] INFO:Minization -- RooMinimizerFcn::synchronize: set of constant parameters changed, rerunning const optimizer
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(fbeta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(beta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:Minization --  The following expressions will be evaluated in cache-and-track mode: (fbeta)
+ **********
+ **    8 **SET ERR           1
+ **********
+ **********
+ **    9 **SET PRINT           1
+ **********
+ **********
+ **   10 **HESSE        1500
+ **********
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=15274.8 FROM HESSE     STATUS=OK             10 CALLS          85 TOTAL
+                     EDM=9.03586e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                INTERNAL      INTERNAL  
+  NO.   NAME      VALUE            ERROR       STEP SIZE       VALUE   
+   1  alpha        7.29927e-04     fixed    
+   2  be           2.50184e+02   2.13898e-03   5.13532e-07   1.84392e-02
+   3  me           1.98583e-03   3.66703e-05   4.51081e-06  -1.72786e+00
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  2    ERR DEF=1
+  4.575e-06  8.226e-09 
+  8.226e-09  1.345e-09 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      2      3
+        2  0.10487   1.000  0.105
+        3  0.10487   0.105  1.000
+[#1] INFO:InputArguments -- RooAbsData::plotOn(db) INFO: dataset has non-integer weights, auto-selecting SumW2 errors instead of Poisson errors
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(fbeta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(beta_Int[bsx]) using numeric integrator RooIntegrator1D to calculate Int(bsx)
+Reduced ChiSq: 17000.7 / 196
+[0mroot [2] .>
+[0m
